@@ -1,0 +1,34 @@
+{
+  "name": "holbertonschool-web_front_end",
+  "version": "1.0.0",
+  "description": "Specialization Holberton Frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vik407/holbertonschool-web_front_end.git"
+  },
+  "keywords": [
+    "holberton",
+    "specialization",
+    "html",
+    "js",
+    "css"
+  ],
+  "author": "Victor Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vik407/holbertonschool-web_front_end/issues"
+  },
+  "homepage": "https://github.com/vik407/holbertonschool-web_front_end#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-w3cjs": "^1.3.2"
+  }
+}
