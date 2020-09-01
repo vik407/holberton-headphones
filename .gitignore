@@ -4,3 +4,4 @@ src
 tmp
 *.bak
 Archive/
+.DS_Store
