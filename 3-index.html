@@ -7,7 +7,7 @@
     <meta name="description" content="A great set of headphones with incredible sound!">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="0-styles.css">
+    <link rel="stylesheet" href="3-styles.css">
   </head>
   <body class="main-page">
     <!-- Header -->
@@ -131,14 +131,17 @@
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" name="name" placeholder="Name" pattern="[A-Za-zÀ-žs]{3,}" maxlength="50" autocomplete="on" accesskey="f" required>
+                  <p class="form-help">Name is required and only letters</p>
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$" maxlength="55" autocomplete="on" accesskey="e" required>
+                  <p class="form-help">Need to be a valid Email address</p>
                 </div>
                 <div class="form-group">
                   <label for="message">Your message</label>
                   <input type="text" name="message" placeholder="Your message" pattern="[A-Za-zÀ-žs]{4,}" maxlength="75" autocomplete="on" accesskey="t" required>
+                  <p class="form-help">Comment should be at least 10 characters</p>
                 </div>
                 <div class="callto">
                   <button class="btn primary" type="submit">CALL TO ACTION</button>
