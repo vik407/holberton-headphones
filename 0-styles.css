@@ -189,18 +189,17 @@ header {
 
 header .container {
   padding: 0 2rem 0 2rem;
+  display: block;
   width: 75%;
   max-width: 1000px;
   margin: 27px auto;
-  display: flex;
-  justify-content: space-between;
-  align-content: space-between; }
+  position: relative; }
 
 .header-logo {
-  order: 1; }
-
-.navbar-menu {
-  order: 2; }
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: left; }
 
 .header-logo a {
   display: block;
@@ -282,9 +281,15 @@ header .container {
 
 @media (max-width: 48em) {
   .navbar-menu {
-    display: none; } }
+    display: none; }
+  .header-logo a {
+    margin: auto; }
+  .navbar-menu .nav .nav-item {
+    text-align: center; } }
 
 @media (min-width: 48em) {
+  .navbar-menu {
+    float: right; }
   .navbar-menu .nav .nav-item {
     display: inline-flex;
     margin: 0 20px;
@@ -294,7 +299,10 @@ header .container {
   .navbar-menu .nav .nav-item:last-child {
     margin-right: 0; }
   .header .menu-icon {
-    display: none; } }
+    display: none; }
+  .header-logo {
+    left: 32px;
+    width: 200px; } }
 
 /* -- Main -- */
 .main-page {

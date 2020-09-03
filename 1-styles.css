@@ -18,6 +18,92 @@
   src: url("fonts/spincycle_ot.otf");
   font-weight: bold; }
 
+/* Holberton School Icons */
+@font-face {
+  font-family: "holberton_school-icon";
+  src: url("fonts/holberton_school-icon.eot?sq4eq4");
+  src: url("fonts/holberton_school-icon.eot?sq4eq4#iefix") format("embedded-opentype"), url("fonts/holberton_school-icon.ttf?sq4eq4") format("truetype"), url("fonts/holberton_school-icon.woff?sq4eq4") format("woff"), url("fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="holberton_school-icon-"],
+[class*=" holberton_school-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "holberton_school-icon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.holberton_school-icon-arrow_1:before {
+  content: "\e900"; }
+
+.holberton_school-icon-arrow_2:before {
+  content: "\e901"; }
+
+.holberton_school-icon-arrow_3:before {
+  content: "\e902"; }
+
+.holberton_school-icon-arrow_4:before {
+  content: "\e903"; }
+
+.holberton_school-icon-arrow_5:before {
+  content: "\e904"; }
+
+.holberton_school-icon-check:before {
+  content: "\e905"; }
+
+.holberton_school-icon-ic_bag:before {
+  content: "\e906"; }
+
+.holberton_school-icon-ic_cart:before {
+  content: "\e907"; }
+
+.holberton_school-icon-ic_facebook:before {
+  content: "\e908"; }
+
+.holberton_school-icon-ic_hearing:before {
+  content: "\e909"; }
+
+.holberton_school-icon-ic_instagram:before {
+  content: "\e90a"; }
+
+.holberton_school-icon-ic_laptop:before {
+  content: "\e90b"; }
+
+.holberton_school-icon-ic_money:before {
+  content: "\e90c"; }
+
+.holberton_school-icon-ic_music:before {
+  content: "\e90d"; }
+
+.holberton_school-icon-ic_sound:before {
+  content: "\e90e"; }
+
+.holberton_school-icon-ic_twitter:before {
+  content: "\e90f"; }
+
+.holberton_school-icon-ic_video:before {
+  content: "\e910"; }
+
+.holberton_school-icon-menu:before {
+  content: "\e911"; }
+
+.holberton_school-icon-search_1:before {
+  content: "\e912"; }
+
+.holberton_school-icon-search_2:before {
+  content: "\e913"; }
+
+.holberton_school-icon-star:before {
+  content: "\e914"; }
+
 /*** 1. GLOBAL ***/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -169,6 +255,9 @@ template {
 html {
   scroll-behavior: smooth; }
 
+.light {
+  background: var(--color-light); }
+
 .btn {
   border-radius: 22px;
   border: none;
@@ -189,18 +278,17 @@ header {
 
 header .container {
   padding: 0 2rem 0 2rem;
+  display: block;
   width: 75%;
   max-width: 1000px;
   margin: 27px auto;
-  display: flex;
-  justify-content: space-between;
-  align-content: space-between; }
+  position: relative; }
 
 .header-logo {
-  order: 1; }
-
-.navbar-menu {
-  order: 2; }
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: left; }
 
 .header-logo a {
   display: block;
@@ -228,7 +316,7 @@ header .container {
   overflow: hidden;
   padding: 0;
   margin: 0;
-  transition: max-height .2s ease-out; }
+  transition: max-height 0.2s ease-out; }
 
 .header .menu-icon {
   cursor: pointer;
@@ -282,9 +370,15 @@ header .container {
 
 @media (max-width: 48em) {
   .navbar-menu {
-    display: none; } }
+    display: none; }
+  .header-logo a {
+    margin: auto; }
+  .navbar-menu .nav .nav-item {
+    text-align: center; } }
 
 @media (min-width: 48em) {
+  .navbar-menu {
+    float: right; }
   .navbar-menu .nav .nav-item {
     display: inline-flex;
     margin: 0 20px;
@@ -294,7 +388,10 @@ header .container {
   .navbar-menu .nav .nav-item:last-child {
     margin-right: 0; }
   .header .menu-icon {
-    display: none; } }
+    display: none; }
+  .header-logo {
+    left: 32px;
+    width: 200px; } }
 
 /* -- Main -- */
 .main-page {
@@ -313,7 +410,7 @@ header .container {
 
 .section-hero {
   width: 100%;
-  height: 95vh;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -346,3 +443,57 @@ header .container {
 
 .section-hero .call-to-action {
   margin: 40px 0; }
+
+/* -- Section What We Do -- */
+#what-we-do .body {
+  padding: 0 2rem 0 2rem;
+  width: 75%;
+  max-width: 1000px;
+  margin: 27px auto;
+  position: relative; }
+
+#what-we-do header {
+  margin: 110px auto;
+  text-align: center; }
+
+#what-we-do header h2 {
+  font-size: 32px;
+  line-height: 37px; }
+
+#what-we-do header .tagline {
+  margin: 40px auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 637px; }
+
+#what-we-do .container .body {
+  margin-top: 50px; }
+
+/* Handle Columns */
+#what-we-do ul.row {
+  list-style: none;
+  padding: 0; }
+  @media (min-width: 48em) {
+    #what-we-do ul.row {
+      display: flex;
+      justify-content: space-between; } }
+
+/* Handle Columns / Column Visualization */
+#what-we-do ul.row .col-1-4 {
+  text-align: center; }
+  @media (min-width: 48em) {
+    #what-we-do ul.row .col-1-4 {
+      max-width: 207px; } }
+
+#what-we-do .glyph {
+  font-size: 100px;
+  color: var(--color-primary); }
+
+#what-we-do h3 {
+  font-size: 18px;
+  line-height: 26px; }
+
+#what-we-do .card-whatwedo p {
+  font-size: 14px;
+  line-height: 26px;
+  margin-bottom: 50px; }
