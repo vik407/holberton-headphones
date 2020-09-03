@@ -8,10 +8,10 @@
 /*** 0. VARIABLES ***/
 :root {
   --color-dark: #000;
-  --color-light: #FFF;
-  --color-primary: #FF6565;
-  --font-family-regular: 'Source Sans Pro', sans-serif;
-  --font-family-logo: 'Spin-Cycle-OT', sans-serif; }
+  --color-light: #fff;
+  --color-primary: #ff6565;
+  --font-family-regular: "Source Sans Pro", sans-serif;
+  --font-family-logo: "Spin-Cycle-OT", sans-serif; }
 
 @font-face {
   font-family: Spin-Cycle-OT;
@@ -32,7 +32,7 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: .67em 0; }
+  margin: 0.67em 0; }
 
 hr {
   box-sizing: content-box;
@@ -40,7 +40,7 @@ hr {
   overflow: visible; }
 
 pre {
-  font-family: monospace,monospace;
+  font-family: monospace, monospace;
   font-size: 1em; }
 
 a {
@@ -51,55 +51,74 @@ abbr[title] {
   text-decoration: underline;
   text-decoration: underline dotted; }
 
-b, strong {
+b,
+strong {
   font-weight: bolder; }
 
-code, kbd, samp {
-  font-family: monospace,monospace;
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
   font-size: 1em; }
 
 small {
   font-size: 80%; }
 
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
 
 sub {
-  bottom: -.25em; }
+  bottom: -0.25em; }
 
 sup {
-  top: -.5em; }
+  top: -0.5em; }
 
 img {
   border-style: none; }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 0; }
 
-button, input {
+button,
+input {
   overflow: visible; }
 
-button, select {
+button,
+select {
   text-transform: none; }
 
-[type=button], [type=reset], [type=submit], button {
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
   -webkit-appearance: button; }
 
-[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
   border-style: none;
   padding: 0; }
 
-[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
   outline: 1px dotted ButtonText; }
 
 fieldset {
-  padding: .35em .75em .625em; }
+  padding: 0.35em 0.75em 0.625em; }
 
 legend {
   box-sizing: border-box;
@@ -115,18 +134,20 @@ progress {
 textarea {
   overflow: auto; }
 
-[type=checkbox], [type=radio] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   padding: 0; }
 
-[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px; }
 
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 ::-webkit-file-upload-button {
@@ -175,6 +196,12 @@ header .container {
   justify-content: space-between;
   align-content: space-between; }
 
+.header-logo {
+  order: 1; }
+
+.navbar-menu {
+  order: 2; }
+
 .header-logo a {
   display: block;
   width: 161px;
@@ -184,25 +211,6 @@ header .container {
   text-indent: -9999px; }
 
 /* -- Header / nav -- */
-header .navbar-menu {
-  display: inline-flex; }
-
-.navbar-menu .nav {
-  list-style: none;
-  padding: 0;
-  margin: 0; }
-
-.navbar-menu .nav .nav-item {
-  display: inline-flex;
-  margin: 0 20px;
-  line-height: 32px; }
-
-.navbar-menu .nav .nav-item:first-child {
-  margin-left: 0; }
-
-.navbar-menu .nav .nav-item:last-child {
-  margin-right: 0; }
-
 .navbar-menu a {
   color: var(--color-light);
   text-decoration: none;
@@ -213,6 +221,80 @@ header .navbar-menu {
 
 .navbar-menu a:hover {
   color: var(--color-primary); }
+
+/* Header / Nav / Hamburger menu */
+.navbar-menu .nav {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  transition: max-height .2s ease-out; }
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 16px 20px;
+  position: relative;
+  user-select: none; }
+
+.header .menu-icon .navicon {
+  background: #fff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px; }
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 110%; }
+
+.header .menu-icon .navicon:before {
+  top: 5px; }
+
+.header .menu-icon .navicon:after {
+  top: -5px; }
+
+.header .menu-btn {
+  display: none; }
+
+.header .menu-btn:checked ~ .navbar-menu {
+  display: block; }
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent; }
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg); }
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg); }
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0; }
+
+@media (max-width: 48em) {
+  .navbar-menu {
+    display: none; } }
+
+@media (min-width: 48em) {
+  .navbar-menu .nav .nav-item {
+    display: inline-flex;
+    margin: 0 20px;
+    line-height: 32px; }
+  .navbar-menu .nav .nav-item:first-child {
+    margin-left: 0; }
+  .navbar-menu .nav .nav-item:last-child {
+    margin-right: 0; }
+  .header .menu-icon {
+    display: none; } }
 
 /* -- Main -- */
 .main-page {
@@ -235,18 +317,21 @@ header .navbar-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #D8D8D8 url("images/headphones_hero_1.jpg") no-repeat top center;
+  background: #d8d8d8 url("images/headphones_hero_1.jpg") no-repeat top center;
   background-size: cover;
   color: var(--color-light); }
 
 .section-hero .body {
-  padding: 45vh 29px 0 29px;
+  padding-top: 45vh;
   text-align: center;
   width: 100%;
   min-width: 357px;
   max-width: 637px;
   font-size: 16px;
   line-height: 26px; }
+
+.section-hero .body .inner {
+  padding: 0 30px; }
 
 .section-hero h2 {
   font-size: 32px;
