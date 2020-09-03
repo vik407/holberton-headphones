@@ -50,7 +50,8 @@ function html(done) {
 function css(done) {
     src(cssSource).pipe(plumber())
         .pipe(sass().on('error', sass.logError))
-        .pipe(dest('./'));
+        .pipe(dest('./'))
+        .pipe(server.stream());
     done();
 }
 
@@ -70,7 +71,7 @@ function w3c(done) {
 
 function watcher(done) {
     watch('./src/*.pug', series(html, browserSyncReload));
-    watch('./src/*.scss', series(css, browserSyncStream));
+    watch('./src/*.scss', series(css));
     done();
 }
 
