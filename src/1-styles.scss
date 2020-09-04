@@ -1,0 +1,422 @@
+/* SUMMARY
+  0. VARIABLES
+  1. GLOBAL
+  2. LAYOUT
+  3. SECTION
+  4. CARD
+*/
+
+/*** 0. VARIABLES ***/
+:root {
+    --color-dark: #000;
+    --color-light: #fff;
+    --color-primary: #ff6565;
+    --font-family-regular: "Source Sans Pro", sans-serif;
+    --font-family-logo: "Spin-Cycle-OT", sans-serif;
+}
+
+@font-face {
+    font-family: Spin-Cycle-OT;
+    src: url("fonts/spincycle_ot.otf");
+    font-weight: bold;
+}
+
+/* Holberton School Icons */
+
+@font-face {
+    font-family: "holberton_school-icon";
+    src: url("fonts/holberton_school-icon.eot?sq4eq4");
+    src: url("fonts/holberton_school-icon.eot?sq4eq4#iefix") format("embedded-opentype"),
+        url("fonts/holberton_school-icon.ttf?sq4eq4") format("truetype"),
+        url("fonts/holberton_school-icon.woff?sq4eq4") format("woff"),
+        url("fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="holberton_school-icon-"],
+[class*=" holberton_school-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "holberton_school-icon" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.holberton_school-icon-arrow_1:before {
+    content: "\e900";
+}
+.holberton_school-icon-arrow_2:before {
+    content: "\e901";
+}
+.holberton_school-icon-arrow_3:before {
+    content: "\e902";
+}
+.holberton_school-icon-arrow_4:before {
+    content: "\e903";
+}
+.holberton_school-icon-arrow_5:before {
+    content: "\e904";
+}
+.holberton_school-icon-check:before {
+    content: "\e905";
+}
+.holberton_school-icon-ic_bag:before {
+    content: "\e906";
+}
+.holberton_school-icon-ic_cart:before {
+    content: "\e907";
+}
+.holberton_school-icon-ic_facebook:before {
+    content: "\e908";
+}
+.holberton_school-icon-ic_hearing:before {
+    content: "\e909";
+}
+.holberton_school-icon-ic_instagram:before {
+    content: "\e90a";
+}
+.holberton_school-icon-ic_laptop:before {
+    content: "\e90b";
+}
+.holberton_school-icon-ic_money:before {
+    content: "\e90c";
+}
+.holberton_school-icon-ic_music:before {
+    content: "\e90d";
+}
+.holberton_school-icon-ic_sound:before {
+    content: "\e90e";
+}
+.holberton_school-icon-ic_twitter:before {
+    content: "\e90f";
+}
+.holberton_school-icon-ic_video:before {
+    content: "\e910";
+}
+.holberton_school-icon-menu:before {
+    content: "\e911";
+}
+.holberton_school-icon-search_1:before {
+    content: "\e912";
+}
+.holberton_school-icon-search_2:before {
+    content: "\e913";
+}
+.holberton_school-icon-star:before {
+    content: "\e914";
+}
+
+/*** 1. GLOBAL ***/
+@import "normalize";
+
+html {
+    scroll-behavior: smooth;
+}
+
+.light {
+    background: var(--color-light);
+}
+
+.btn {
+    border-radius: 22px;
+    border: none;
+    padding: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--font-family-regular);
+}
+
+.btn-primary {
+    color: var(--color-light);
+    background-color: var(--color-primary);
+    filter: drop-shadow(0px 2px 20px rgba(0, 0, 0, 0.5));
+}
+
+/*** 2. LAYOUT ***/
+/* -- Header -- */
+
+header {
+    width: 100%;
+}
+
+header .container {
+    padding: 0 2rem 0 2rem;
+    display: block;
+    width: 75%;
+    max-width: 1000px;
+    margin: 27px auto;
+    position: relative;
+}
+
+.header-logo {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: left;
+}
+
+.header-logo a {
+    display: block;
+    width: 161px;
+    height: 32px;
+    background: transparent url("images/logo_headphones.png") no-repeat left top;
+    background-size: 161px 32px;
+    text-indent: -9999px;
+}
+
+/* -- Header / nav -- */
+
+.navbar-menu a {
+    color: var(--color-light);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: lowercase;
+    transition: all 300ms;
+}
+
+.navbar-menu a:hover {
+    color: var(--color-primary);
+}
+
+/* Header / Nav / Hamburger menu */
+.navbar-menu .nav {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 16px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: #fff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 110%;
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .navbar-menu {
+    display: block;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+@media (max-width: 48em) {
+    .navbar-menu {
+        display: none;
+    }
+    .header-logo a {
+        margin: auto;
+    }
+    .navbar-menu .nav .nav-item {
+        text-align: center;
+    }
+}
+
+@media (min-width: 48em) {
+    .navbar-menu {
+        float: right;
+    }
+    .navbar-menu .nav .nav-item {
+        display: inline-flex;
+        margin: 0 20px;
+        line-height: 32px;
+    }
+
+    .navbar-menu .nav .nav-item:first-child {
+        margin-left: 0;
+    }
+
+    .navbar-menu .nav .nav-item:last-child {
+        margin-right: 0;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+
+    .header-logo {
+        left: 32px;
+        width: 200px;
+    }
+}
+
+/* -- Main -- */
+
+.main-page {
+    font-family: var(--font-family-regular);
+}
+.header {
+    position: absolute;
+}
+.header-logo {
+    font-family: var(--font-family-logo);
+    text-transform: uppercase;
+}
+.header-logo a {
+    text-decoration: none;
+    color: var(--color-light);
+}
+.section-hero {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d8d8d8 url("images/headphones_hero_1.jpg") no-repeat top center;
+    background-size: cover;
+    color: var(--color-light);
+}
+
+.section-hero .body {
+    padding-top: 45vh;
+    text-align: center;
+    width: 100%;
+    min-width: 357px;
+    max-width: 637px;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.section-hero .body .inner {
+    padding: 0 30px;
+}
+
+.section-hero h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.section-hero .tagline {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.section-hero .call-to-action {
+    margin: 40px 0;
+}
+
+/* -- Section What We Do -- */
+
+#what-we-do .body {
+    padding: 0 2rem 0 2rem;
+    width: 75%;
+    max-width: 1000px;
+    margin: 27px auto;
+    position: relative;
+}
+
+#what-we-do header {
+    margin: 110px auto;
+    text-align: center;
+}
+
+#what-we-do header h2 {
+    font-size: 32px;
+    line-height: 37px;
+}
+
+#what-we-do header .tagline {
+    margin: 40px auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 637px;
+}
+
+#what-we-do .container .body {
+    margin-top: 50px;
+}
+
+/* Handle Columns */
+
+#what-we-do ul.row {
+    list-style: none;
+    padding: 0;
+    @media (min-width: 48em) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* Handle Columns / Column Visualization */
+
+#what-we-do ul.row .col-1-4 {
+    @media (min-width: 48em) {
+        max-width: 207px;
+    }
+    text-align: center;
+}
+
+#what-we-do .glyph {
+    font-size: 100px;
+    color: var(--color-primary);
+}
+
+#what-we-do h3 {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+#what-we-do .card-whatwedo p {
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 50px;
+}

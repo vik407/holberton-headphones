@@ -1,0 +1,22 @@
+doctype
+html(lang='en', dir="ltr")
+    head
+        include _head
+        link(rel="stylesheet", href="1-styles.css")
+
+    body#top.main-page
+        // Header 
+        header.header
+            .container
+                // Logo 
+                .header-logo
+                    a(href="#") Headphones
+                // Navbar
+                include _navbar
+                
+        // Main 
+        main
+            // Hero Section 
+            include _section_hero
+            // What we do Section
+            include _section_whatwedo
